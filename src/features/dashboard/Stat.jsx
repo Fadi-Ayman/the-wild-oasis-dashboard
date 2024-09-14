@@ -12,9 +12,10 @@ const StyledStat = styled.div`
   column-gap: 1.6rem;
   row-gap: 0.4rem;
 
+
+
   @media (max-width: 940px) {
     column-gap: 0rem;
-
   }
 `;
 
@@ -26,6 +27,7 @@ const Icon = styled.div`
   align-items: center;
   justify-content: center;
 
+
   background-color: var(--color-${(props) => props.color}-100);
 
   & svg {
@@ -36,11 +38,13 @@ const Icon = styled.div`
     @media (max-width: 940px) {
       width: 1.8rem;
       height: 1.8rem;
+      
   }
   }
 
   @media (max-width: 940px) {
     width: fit-content;
+    height: 100%;
   }
 
 `;
@@ -52,6 +56,8 @@ const Title = styled.h5`
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-500);
+
+  
 
   @media (max-width: 940px) {
     font-size: 1rem;
@@ -73,7 +79,7 @@ function  Stat({ icon, title, value, color }) {
   return (
     <StyledStat>
       <Icon color={color}>{icon}</Icon>
-      <Title>{title}</Title>
+      <Title>{title }</Title>
       <Value>{value}</Value>
     </StyledStat>
   );

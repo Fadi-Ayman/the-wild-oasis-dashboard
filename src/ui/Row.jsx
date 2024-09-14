@@ -10,6 +10,7 @@ const Row = styled.div`
       align-items: center;
     `}
 
+
   ${(props) =>
     props.type === "vertical" &&
     css`

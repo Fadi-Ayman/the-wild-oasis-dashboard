@@ -3,6 +3,8 @@ import { useDarkMode } from "../context/DarkModeContext";
 
 const StyledLogo = styled.div`
   text-align: center;
+
+  display: ${(props) => props.hidden === true ? 'none' : 'block'};
 `;
 
 const Img = styled.img`
@@ -10,13 +12,13 @@ const Img = styled.img`
   width: auto;
 `;
 
-function Logo() {
+function Logo({isHidden}) {
   const { isDarkMode } = useDarkMode();
 
   const src = isDarkMode ? "/logo-dark.png" : "/logo-light.png";
 
   return (
-    <StyledLogo>
+    <StyledLogo hidden={isHidden}>
       <Img src={src} alt="Logo" />
     </StyledLogo>
   );

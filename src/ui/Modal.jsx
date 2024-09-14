@@ -26,6 +26,9 @@ const Overlay = styled.div`
   backdrop-filter: blur(4px);
   z-index: 1000;
   transition: all 0.5s;
+  @media (max-width: 800px) {
+    height: 100%;
+  }
 `;
 
 const Button = styled.button`
@@ -48,6 +51,8 @@ const Button = styled.button`
     height: 2.4rem;
     color: var(--color-grey-500);
   }
+
+
 `;
 
 const ModalContext = createContext();

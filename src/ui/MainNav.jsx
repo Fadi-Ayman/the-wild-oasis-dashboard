@@ -10,8 +10,9 @@ import {
 
 const NavList = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-direction:${(props) => (props.horizontal ? "row" : "column")};
   gap: 0.8rem;
+  
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -53,38 +54,38 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-function MainNav() {
+function MainNav({dir}) {
   return (
     <nav>
-      <NavList>
+      <NavList horizontal={dir === "horizontal"}>
         <li>
           <StyledNavLink to="/dashboard">
             <HiOutlineHome />
-            <span>Home</span>
+            {dir !== 'horizontal' && <span>Home</span>}
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/bookings">
             <HiOutlineCalendarDays />
-            <span>Bookings</span>
+            {dir !== 'horizontal' && <span>Bookings</span>}
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/cabins">
             <HiOutlineHomeModern />
-            <span>Cabins</span>
+            {dir !== 'horizontal' && <span>Cabins</span>}
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/users">
             <HiOutlineUsers />
-            <span>Users</span>
+            {dir !== 'horizontal' && <span>Users</span>}
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/settings">
             <HiOutlineCog6Tooth />
-            <span>Settings</span>
+            {dir !== 'horizontal' && <span>Settings</span>}
           </StyledNavLink>
         </li>
       </NavList>
